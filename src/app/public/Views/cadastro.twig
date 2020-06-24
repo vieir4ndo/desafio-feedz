@@ -1,0 +1,36 @@
+{% extends 'template1.twig' %}
+
+{% block conteudo %}
+<section class="blocoLogin">
+{% if (passwordError == true) %}
+<div class="alert alert-danger" role="alert">
+  As senhas informadas não conferem!
+</div>
+{% endif %}
+{% if (emailError == true) %}
+<div class="alert alert-danger" role="alert">
+  Este e-mail já foi cadastrado!
+</div>
+{% endif %}
+<form class="form-group" action="{{ path_for('cadastro') }}" method="post" name="form_cad">
+<div class="form-group">
+    <label for="exampleInputEmail1">Nome</label>
+    <input type="text" class="form-control" name="nome" required>
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">E-mail</label>
+    <input type="email" class="form-control" name="email" required>
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Senha</label>
+    <input type="password" class="form-control" name="senha" required>
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Confirme sua senha</label>
+    <input type="password" class="form-control" name="confirmaSenha" required>
+</div>
+<div align="center">
+<input type="submit" class="btn btn-primary" value="Cadastrar">
+</div>
+</section>
+{% endblock %}

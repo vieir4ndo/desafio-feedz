@@ -1,0 +1,29 @@
+{% extends 'template1.twig' %}
+
+{% block conteudo %}
+<section class="blocoLogin">
+{% if (emailErrorLogin == true) %}
+<div class="alert alert-danger" role="alert">
+  Seu e-mail ou senha está incorreto!
+</div>
+{% endif %}
+{% if (delete == true) %}
+<div class="alert alert-success" role="alert">
+  Sua conta foi deletada!
+</div>
+{% endif %}
+<form class="form-group" action="{{ path_for('login') }}" method="post" name="form_log">
+    <div class="form-group">
+        <label for="exampleInputEmail1">E-mail</label>
+        <input type="email" class="form-control" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Senha</label>
+        <input type="password" class="form-control" name="senha" required>
+    </div>
+    <div align="center">
+    <input type="submit" class="btn btn-primary" value="Entrar">
+    </div>
+</fomr>
+</section>
+{% endblock %}

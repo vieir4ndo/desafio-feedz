@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-BR">
+
+<head>
+<meta charset=UTF-8>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ base_url() }}/src/app/public/Estilo/style.css" type="text/css">
+<title>Desafio Feedz</title>
+</head>
+<body>
+<section class="containerLogin" >
+<h1 class="text-center" class="font-weight-bolder" >Bem-vindo!</h1>
+
+    <nav>
+        <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ path_for('login') }}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path_for('cadastro') }}">Cadastro</a>
+        </li>
+        </ul>
+    </nav>
+    <section class="container">
+        {% block conteudo %}
+        {% endblock %}
+    </section>
+    </section>
+<body>
+</html>

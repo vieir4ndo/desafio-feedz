@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-BR">
+
+<head>
+<meta charset=UTF-8>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ base_url() }}/src/app/public/Estilo/style.css" type="text/css">
+<title>Desafio Feedz</title>
+</head>
+<body>
+    <section class="header" >
+     <h1 class="text-left font-weight-bolder text-white" >DESAFIO FEEDZ!</h1>
+    </section>
+    <nav class="navegador">
+      <a class="nav-link text-white" href="{{ path_for('home') }}">Home</a>
+      <a class="nav-link text-white" href="{{ path_for('perfil') }}">Perfil</a>
+      <a class="nav-link text-white" href="{{ path_for('consulta') }}">Consulta Usuários</a>
+      <a class="nav-link text-white" href="{{ path_for('alterarSenha') }}" >Alterar  Senha</a>
+      <a class="nav-link text-white" href="{{ path_for('deletarConta') }}" >Deletar Conta</a>
+      <a class="nav-link text-white" href="{{ path_for('sair') }}" >Sair</a>
+    </nav>
+    <section class="fundo">
+      <section class="conteudo">
+        {% block conteudo %}
+        {% endblock %}
+      </section>
+    </section>
+<body>
+</html>

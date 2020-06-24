@@ -1,0 +1,41 @@
+{% extends 'template.twig' %}
+
+{% block conteudo %}
+<h3 class="text-left font-weight-bolder " >Alterar Senha</h3>
+{% if (success == true) %}
+<div class="alert alert-success" role="alert">
+  Sua senha foi alterada com sucesso!
+</div>
+{% endif %}
+{% if (error == true) %}
+<div class="alert alert-danger" role="alert">
+  Infelizmente não foi possível completar sua ação, tente novamente!
+</div>
+{% endif %}
+{% if (errorSenhaAtual == true) %}
+<div class="alert alert-danger" role="alert">
+  A senha atual não confere com nossos registro!
+</div>
+{% endif %}
+{% if (passwordError == true) %}
+<div class="alert alert-danger" role="alert">
+  As novas senhas informadas não conferem!
+</div>
+{% endif %}
+<form class="form-group" action="{{ path_for('alterarSenha')}}" method="post" name="form_alterarSenha">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Senha Atual</label>
+        <input type="password" class="form-control" name="senhaAtual">
+    </div>
+     <div class="form-group">
+        <label for="exampleInputEmail1">Nova Senha</label>
+        <input type="password" class="form-control" name="novaSenha">
+    </div>
+     <div class="form-group">
+        <label for="exampleInputEmail1">Confirme Nova Senha</label>
+        <input type="password" class="form-control" name="confirmaNovaSenha">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Alterar Senha">
+</fomr>
+
+{% endblock %}
