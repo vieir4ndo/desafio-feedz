@@ -12,6 +12,11 @@
   Sua conta foi deletada!
 </div>
 {% endif %}
+{% if (create == true) %}
+<div class="alert alert-success" role="alert">
+  Sua conta foi criada!
+</div>
+{% endif %}
 <form class="form-group" action="{{ path_for('login') }}" method="post" name="form_log">
     <div class="form-group">
         <label for="exampleInputEmail1">E-mail</label>

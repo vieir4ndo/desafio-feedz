@@ -66,7 +66,8 @@
                     if($insert->execute()){
                         return $this->view->render($response, 'login.twig', [
                             'emailError' => false,
-                            'passwordError' => false
+                            'passwordError' => false, 
+                            'create' => true
                             ]);
 
                     }else{
@@ -215,11 +216,17 @@
                 return $this->view->render($response,'login.twig', [
                     'delete' => true
             ]);
-                } else {
-                    echo 'não deu enviar banco';
-                }
             } else {
-                echo 'senhas não batem';
+                return $this->view->render($response,'deletarConta.twig', [
+                    'delete1' => true,
+                    'delete2'=> false
+                ]);
+            }
+            } else {
+                return $this->view->render($response,'deletarConta.twig', [
+                    'delete2' => true,
+                    'delete1' => false
+                    ]);
             }
         }
 

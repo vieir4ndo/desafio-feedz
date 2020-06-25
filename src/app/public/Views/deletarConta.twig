@@ -2,6 +2,16 @@
 
 {% block conteudo %}
 <h3 class="text-left font-weight-bolder " >Deletar Conta</h3>
+{% if (delete1 == true) %}
+<div class="alert alert-danger" role="alert">
+ Infelizmente não foi possível completar a operação, tente novamente!
+</div>
+{% endif %}
+{% if (delete2 == true) %}
+<div class="alert alert-danger" role="alert">
+As senhas informadas não conferem!
+</div>
+{% endif %}
 <form class="form-group" action="{{ path_for('deletarConta') }}" method="post" name="form_deletarConta">
     <div class="form-group">
         <label for="exampleInputEmail1">Senha</label>
